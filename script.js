@@ -1,38 +1,34 @@
-// 11. Container With Most Water
+// 1679. Max Number of K-Sum Pairs
+// You are given an integer array nums and an integer k.
 
-// You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
+// In one operation, you can pick two numbers from the array whose sum equals k and remove them from the array.
 
-// Find two lines that together with the x-axis form a container, such that the container contains the most water.
+// Return the maximum number of operations you can perform on the array.
 
-// Return the maximum amount of water a container can store.
+ 
 
-// Notice that you may not slant the container.
+// Example 1:
 
-// Input: height = [1,8,6,2,5,4,8,3,7]
-// Output: 49
-// Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
+// Input: nums = [1,2,3,4], k = 5
+// Output: 2
+// Explanation: Starting with nums = [1,2,3,4]:
+// - Remove numbers 1 and 4, then nums = [2,3]
+// - Remove numbers 2 and 3, then nums = []
+// There are no more pairs that sum up to 5, hence a total of 2 operations.
 
-height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+let nums = [3,1,3,4,3];
+let k = 5;
 
-var maxArea = function (height) {
-  let maxArea = 0;
-  let left = 0;
-  let right = height.length - 1;
+var maxOperations = function(nums, k) {
+    let left = 0;
+    let right = nums.length - 1
 
-  while (left < right) {
-    maxArea = Math.max(
-      maxArea,
-      (right - left) * Math.min(height[left], height[right])
-    );
+    console.log(nums[left] , nums[right])
 
-    if (height[left] < height[right]) {
-      left++;
-    } else {
-      right--;
+    for(let i = 0; i<= right; i++){
+        
     }
-  }
-
-  return maxArea
+    
 };
 
-console.log(maxArea(height));
+console.log(maxOperations(nums, k));
